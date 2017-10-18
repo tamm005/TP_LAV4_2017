@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { AdivinaElNumeroComponent } from './componentes/adivina-el-numero/adivina-el-numero.component';
 import { ListadoDeResultadosComponent } from './componentes/listado-de-resultados/listado-de-resultados.component';
 import { LoginComponent } from './componentes/login/login.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awesome';
 //  import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 // import { AccordionModule } from 'ngx-bootstrap';
@@ -19,6 +20,7 @@ import { AdivinaMasListadoComponent } from './componentes/adivina-mas-listado/ad
 import { AgilidadMasListadoComponent } from './componentes/agilidad-mas-listado/agilidad-mas-listado.component';
 import { RuteandoModule } from './ruteando/ruteando.module';
 import { ListadoComponent } from './componentes/listado/listado.component';
+
 // declaro donde quiero que se dirija
 /*
 const MiRuteo = [{path: 'error' , component: ErrorComponent},
@@ -66,7 +68,8 @@ import { AnagramaComponent } from './componentes/anagrama/anagrama.component'
   imports: [
     BrowserModule,
     FormsModule,
-    RuteandoModule
+    RuteandoModule,
+    AngularFontAwesomeModule
 
     // NgbModule.forRoot(MiRuteo),
     // importo el ruteo
