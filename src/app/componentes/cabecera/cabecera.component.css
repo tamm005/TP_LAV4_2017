@@ -33,3 +33,20 @@ cursor: pointer;
 background-color: #555;
 color: white;
 }
+
+a{
+    color: #243dc0;
+    text-decoration: none;
+}
+
+.button-right {
+    padding: 24px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: right;
+    float: right;
+ 
+
+}
