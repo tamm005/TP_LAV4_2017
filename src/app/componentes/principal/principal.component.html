@@ -73,29 +73,37 @@
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
-
+      
       <div class="item active">
-        <img src='../../../assets/imagenes/ppyt.jpg' alt="Juegos" style="width:55%;">
-        <div class="carousel-caption carousel-text-right">
-          <h3 class="text-right">Juegos</h3>
-          <p class="text-right">El método lúdico es un conjunto de estrategias diseñadas para crear un ambiente de armonía en los estudiantes que están inmersos en el proceso de aprendizaje. Este método busca que los alumnos se apropien de los temas impartidos por los docentes utilizando el juego.</p>
-        </div>
+        <img src='../../../assets/imagenes/ppyt.jpg' alt="Juegos" style="width:44.5%;">
+        <a routerLink="/Juegos">
+          <div class="carousel-caption carousel-text-right">          
+            <h3 class="text-right">Juegos</h3>
+            <p class="text-right">El método lúdico es un conjunto de estrategias diseñadas para crear un ambiente de armonía en los estudiantes que están inmersos en el proceso de aprendizaje. Este método busca que los alumnos se apropien de los temas impartidos por los docentes utilizando el juego.</p>
+          </div>
+        </a>
       </div>
+      
 
       <div class="item">
         <img src='../../../assets/imagenes/listados.jpg' alt="Listados de resultados" style="width:46.15%;">
-        <div class="carousel-caption carousel-text-right">
-          <h3>Listados de resultados</h3>
-          <p>Los listados de los resultados con ordenamiento y busqueda</p>
-        </div>
+         <a routerLink="/Login"> <!-- <a routerLink="/Listado"> -->
+          <div class="carousel-caption carousel-text-right">
+            <h3 class="text-right">Listados de resultados</h3>
+            <!-- <p>Los listados de los resultados con ordenamiento y busqueda</p> -->
+            <p class="text-right">Estadísticas y resultados del juego para cada jugador.</p>
+          </div>
+       </a>
       </div>
     
       <div class="item">
         <img src="../../../assets/imagenes/settings.jpg" alt="Configuración" style="width:46%;">
-        <div class="carousel-caption carousel-text-right">
-          <h3>Configuración</h3>
-          <p>Ajustes de la aplicacion y los métodos de autentificación</p>
-        </div>
+        <a routerLink="/Juegos">
+          <div class="carousel-caption carousel-text-right">
+            <h3 class="text-right">Configuración</h3>
+            <p class="text-right"> Ajustes de la aplicacion y los métodos de autentificación</p>
+          </div>
+        </a>
       </div>
   
     </div>

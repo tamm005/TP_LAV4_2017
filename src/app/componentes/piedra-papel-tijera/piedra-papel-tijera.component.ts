@@ -8,10 +8,35 @@ import { JuegoPiedraPapelTijera } from '../../clases/juego-piedra-papel-tijera';
 })
 export class PiedraPapelTijeraComponent implements OnInit {
   eleccionUser : string;
+  empezar : JuegoPiedraPapelTijera;
+  nuevoJuego : JuegoPiedraPapelTijera;
+  constructor() {
+    this.empezar = new JuegoPiedraPapelTijera();
+    this.nuevoJuego = new JuegoPiedraPapelTijera();
+  }
   
-  constructor() { }
+ 
+
+  elijePiedra(){
+    this.empezar.comenzar();
+    alert("yo elegí piedra ");
+    this.nuevoJuego.piedra();
+  }
+
+  elijePapel(){
+    this.empezar.comenzar();
+    alert("yo elegí papel ");
+    this.nuevoJuego.papel();
+  }
+
+  elijeTijera(){
+    this.empezar.comenzar();
+    alert("yo elegí tijera ");
+    this.nuevoJuego.tijera();
+  }
 
   ngOnInit() {
+   // this.empezar.comenzar();
   }
 
 }

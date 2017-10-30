@@ -1,34 +1,38 @@
-<p>
-  piedra-papel-tijera!
-</p>
-
-<div class='row-fluid'>
-  <div class='span4 text-center box'>
-    <div>
-      <img alt='Icono Piedra' src='../../../assets/imagenes/rock-icon.png'>
+<div class="content">
+  <h1 style="text-align:center">
+    piedra-papel-tijera!
+  </h1><br />
+  <br />  
+  
+  <div class='row-fluid' >
+    <div class='col col-md-4'>
+      <div>
+        <img alt='Icono Piedra' src='../../../assets/imagenes/rock-icon.png'>
+      </div>
+      <br>
+      <p>
+        <button type="button" class="btn" (click)="elijePiedra()">Piedra</button>
+      </p>
     </div>
-    <br>
-    <p>
-      <a class='btn btn-large' href='?choice=Piedra'>PIEDRA</a>
-    </p>
-  </div>
-  <div class='span4 text-center box'>
-    <div>
-      <img alt='Icono Papel' src='../../../assets/imagenes/paper-icon.png'>
+    <div class='col col-md-4'>
+      <div>
+        <img alt='Icono Papel' src='../../../assets/imagenes/paper-icon.png'>
+      </div>
+      <br>
+      <p>
+        <button type="button" class="btn" (click)="elijePapel()">Papel</button>
+      </p>
     </div>
-    <br>
-    <p>
-      <a class='btn btn-large' href='?choice=Papel'>PAPEL</a>
-    </p>
-  </div>
-  <div class='span4 text-center box'>
-    <div>
-      <img alt='Icono Tijera' src='../../../assets/imagenes/scissor-icon.png'>
+    <div class='col col-md-4'>
+      <div>
+        <img alt='Icono Tijera' src='../../../assets/imagenes/scissor-icon.png'>
+      </div>
+      <br>
+      <p>
+        <button type="button" class="btn" (click)="elijeTijera()">Tijera</button>
+      </p>
     </div>
-    <br>
-    <p>
-      <a class='btn btn-large' href='?choice=Tijera'>TIJERA</a>
-    </p>
   </div>
+  
+  
 </div>
-

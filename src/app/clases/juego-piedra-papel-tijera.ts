@@ -1,35 +1,41 @@
-export class JuegoPiedraPapelTijera {
+import { Juego } from '../clases/juego'
+
+export class JuegoPiedraPapelTijera extends Juego {
     eleccionMaquina : string;
     eleccionHumano : string;
     ContadorDeEmpates : number =0;
     ContadorDeGanadas : number =0;
     ContadorDePerdidas : number =0; 
-    numeroSecreto : number;
+    numeroSecreto : number = null;
 
-    constructor(){}
+    constructor(nombre?: string, gano?: boolean,jugador?:string){
+        super("Piedra Papel o Tijera",gano,jugador);
+        this.comenzar();
+    }
 
     public comenzar()
     {
         this.numeroSecreto =Math.floor( Math.random()*3)+1;//RANDOM entre 1 y 3
-        //alert(numeroSecreto);
+        // alert(this.numeroSecreto+ ' secreto'); 
+
         switch(this.numeroSecreto)
         {
             case 1:
-            this.eleccionMaquina="piedra";
+                // alert(this.numeroSecreto);
+                this.eleccionMaquina = 'piedra';
                 break;
             case 2:
-            this.eleccionMaquina="papel";
+                this.eleccionMaquina= 'papel';
                 break;
             case 3:
-            this.eleccionMaquina="tijera";
+                this.eleccionMaquina= 'tijera';
                 break;
         }
-        //alert(eleccionMaquina);
     }//end funcion comenzar
 
     public piedra()
     {
-        alert("La máquina eligió: " + this.eleccionMaquina);
+        alert(" La máquina eligió: " + this.eleccionMaquina);
         this.eleccionHumano = "piedra";
         if(this.eleccionHumano == this.eleccionMaquina)
         {
@@ -47,6 +53,7 @@ export class JuegoPiedraPapelTijera {
             this.ContadorDePerdidas++;
         }
     this.mostarResultado();
+    this.comenzar();
     }//end funcion piedra
 
     public papel()
@@ -69,6 +76,7 @@ export class JuegoPiedraPapelTijera {
             this.ContadorDePerdidas++;
         }
     this.mostarResultado();
+    this.comenzar();
     }//end funcion  papel
 
     tijera()
@@ -91,15 +99,24 @@ export class JuegoPiedraPapelTijera {
             this.ContadorDePerdidas++;
         }
     this.mostarResultado();
+    this.comenzar();
     }//end funcion tijera
 
     public mostarResultado(){
-        /* Mostrar
-        document.getElementById('empatadas').value=ContadorDeEmpates + " partidas empatadas.";
-        document.getElementById('perdidas').value=ContadorDePerdidas + " partidas perdidas.";
-        document.getElementById('ganadas').value=ContadorDeGanadas + " partidas ganadas."; 
-         */
-        this.comenzar();
+        alert( 'Ganados: ' + this.ContadorDeGanadas + '\n Perdidos:' + this.ContadorDePerdidas +
+                '\n Empatados: ' + this.ContadorDeEmpates );
+    }
+
+    public verificar(){
+        if(this.gano){
+            alert("gano");
+            return true;
+        }
+        else{
+            alert("perdió");
+            return false;
+        }
+        
     }
 
 }
