@@ -1,9 +1,12 @@
+<button *ngIf="mostrarBoton" type="button" class="btn" (click)="limpiar()" >Abandonar</button>
 <div class="content">
   <div class="well color-fondo">
     <h1 style="text-align:center">
-      piedra-papel-tijera!
+    <h3>{{eleccionMaquina}}</h3>
+    <h2>{{resultado}}</h2> 
+    <h3>{{estadisticas}}</h3> 
+    
     </h1><br />
-    <br />  
     
     
     <div class="row margen-izq">  

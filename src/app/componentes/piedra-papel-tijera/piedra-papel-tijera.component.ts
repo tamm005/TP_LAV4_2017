@@ -10,33 +10,48 @@ export class PiedraPapelTijeraComponent implements OnInit {
   eleccionUser : string;
   empezar : JuegoPiedraPapelTijera;
   nuevoJuego : JuegoPiedraPapelTijera;
+  eleccionMaquina : any = "piedra-papel-tijera!";
+  resultado : any;
+  estadisticas : any;
+  mostrarBoton : boolean = false;
   constructor() {
     this.empezar = new JuegoPiedraPapelTijera();
     this.nuevoJuego = new JuegoPiedraPapelTijera();
   }
   
- 
 
   elijePiedra(){
     this.empezar.comenzar();
-    alert("yo elegí piedra ");
-    this.nuevoJuego.piedra();
+    this.mostrarBoton = true;
+    this.eleccionMaquina = this.nuevoJuego.piedra();
+    this.resultado = this.nuevoJuego.mensaje;
+    this.estadisticas = this.nuevoJuego.mostarResultado();
   }
 
   elijePapel(){
     this.empezar.comenzar();
-    alert("yo elegí papel ");
-    this.nuevoJuego.papel();
+    this.mostrarBoton = true;
+    this.eleccionMaquina = this.nuevoJuego.papel();
+    this.resultado = this.nuevoJuego.mensaje;
+    this.estadisticas = this.nuevoJuego.mostarResultado();
   }
 
   elijeTijera(){
     this.empezar.comenzar();
-    alert("yo elegí tijera ");
-    this.nuevoJuego.tijera();
+    this.mostrarBoton = true;
+    this.eleccionMaquina = this.nuevoJuego.tijera();
+    this.resultado = this.nuevoJuego.mensaje;
+    this.estadisticas = this.nuevoJuego.mostarResultado();
   }
 
+  limpiar(){
+    this.mostrarBoton = false;
+    this.eleccionMaquina = "piedra-papel-tijera!";
+    this.resultado = "";
+    this.estadisticas = "";
+    this.nuevoJuego.resetear();
+  }
   ngOnInit() {
-   // this.empezar.comenzar();
   }
 
 }

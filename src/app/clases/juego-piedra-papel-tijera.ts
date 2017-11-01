@@ -7,6 +7,9 @@ export class JuegoPiedraPapelTijera extends Juego {
     ContadorDeGanadas : number =0;
     ContadorDePerdidas : number =0; 
     numeroSecreto : number = null;
+    mensaje : string;
+    msjEleccionMaquina : string;
+    mensajeResultado : string;
 
     constructor(nombre?: string, gano?: boolean,jugador?:string){
         super("Piedra Papel o Tijera",gano,jugador);
@@ -33,78 +36,79 @@ export class JuegoPiedraPapelTijera extends Juego {
         }
     }//end funcion comenzar
 
-    public piedra()
+    public piedra():string
     {
-        alert(" La máquina eligió: " + this.eleccionMaquina);
-        this.eleccionHumano = "piedra";
+        this.msjEleccionMaquina =  "La máquina eligió: " + this.eleccionMaquina;
+        this.eleccionHumano = "piedra ";
         if(this.eleccionHumano == this.eleccionMaquina)
         {
-            alert("Empate.");	
+            this.mensaje = " Empate. ";	
             this.ContadorDeEmpates++;	
         }
         else if(this.eleccionMaquina == "tijera")
         {
-            alert("Ganaste!");
+            this.mensaje = " Ganaste! ";
             this.ContadorDeGanadas++;
         }
         else
         {
-            alert("Ganó la Máquina!");
+            this.mensaje = " Oops... Ganó la Máquina! ";
             this.ContadorDePerdidas++;
-        }
-    this.mostarResultado();
-    this.comenzar();
+        }       
+        this.comenzar();
+        return this.msjEleccionMaquina;
     }//end funcion piedra
 
-    public papel()
+    public papel():string
     {
-        alert("La máquina eligió: " + this.eleccionMaquina);
+        this.msjEleccionMaquina = "La máquina eligió: " + this.eleccionMaquina;
         this.eleccionHumano = "papel";
         if(this.eleccionHumano == this.eleccionMaquina)
         {
-            alert("Empate.");
+            this.mensaje = " Empate.";
             this.ContadorDeEmpates++;		
         }
         else if(this.eleccionMaquina == "piedra")
         {
-            alert("Ganaste.");
+            this.mensaje = " Ganaste.";
             this.ContadorDeGanadas++;
         }
         else
         {
-            alert("Ganó la Máquina.");
+            this.mensaje = " Oops... Ganó la Máquina.";
             this.ContadorDePerdidas++;
         }
-    this.mostarResultado();
-    this.comenzar();
+        this.comenzar();
+        return this.msjEleccionMaquina;
     }//end funcion  papel
 
-    tijera()
+    tijera():string
     {
-        alert("La máquina eligió: " +this.eleccionMaquina);
+        this.msjEleccionMaquina = "La máquina eligió: " +this.eleccionMaquina;
         this.eleccionHumano = "tijera";
         if(this.eleccionHumano == this.eleccionMaquina)
         {
-            alert("Empate. ");
+            this.mensaje = " Empate.";
             this.ContadorDeEmpates++;		
         }
         else if(this.eleccionMaquina == "papel")
         {
-            alert("Ganaste. ");
+            this.mensaje = " Ganaste. ";
             this.ContadorDeGanadas++;
         }
         else
         {
-            alert("Ganó la Máquina.");
+            this.mensaje = " Oops... Ganó la Máquina. ";
             this.ContadorDePerdidas++;
         }
-    this.mostarResultado();
-    this.comenzar();
+        this.comenzar();
+        return this.msjEleccionMaquina ;
     }//end funcion tijera
 
-    public mostarResultado(){
-        alert( 'Ganados: ' + this.ContadorDeGanadas + '\n Perdidos:' + this.ContadorDePerdidas +
-                '\n Empatados: ' + this.ContadorDeEmpates );
+    public mostarResultado():string
+    {
+        return  this.mensajeResultado =  'Ganados: ' + this.ContadorDeGanadas + ' \nPerdidos:' + this.ContadorDePerdidas +
+                ' Empatados: ' + this.ContadorDeEmpates ;
     }
 
     public verificar(){
@@ -117,6 +121,18 @@ export class JuegoPiedraPapelTijera extends Juego {
             return false;
         }
         
+    }
+
+    public resetear(){
+        this.eleccionMaquina = "";
+        this.eleccionHumano = "";
+        this.ContadorDeEmpates  =0;
+        this.ContadorDeGanadas  =0;
+        this.ContadorDePerdidas  =0; 
+        this.numeroSecreto  = null;
+        this.mensaje = "";
+        this.msjEleccionMaquina = "";
+        this.mensajeResultado = "";
     }
 
 }
