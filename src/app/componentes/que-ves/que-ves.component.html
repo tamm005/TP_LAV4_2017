@@ -1,0 +1,30 @@
+<div class="content">
+  <div class="well color-fondo">
+    <div style="text-align:center">
+      <h1>
+        {{nuevoJuego.nombre}}!
+      </h1>
+    </div>
+    <h1 style="text-align:center">
+      <button type="button" class="btn" (click)="ComenzarJuego()" >{{ mostrarJuego ? 'Terminar' : 'Empezar'}}</button>
+      <div *ngIf="mostrarJuego"  class="well">
+          <div class="row margen-izq">  
+            <div class="col-md-4">
+              <img alt='Icono Piedra' src='../../../assets/imagenes/{{miImagen}}.jpg'><br /><br /><br />
+              <p>
+                  Respuesta: <input [(ngModel)]="nuevoJuego.respuestaIngresada" placeholder=" Ingrese respuesta" name="respuestaIngresada" type="text" class="form-control" style="width:50%"/>
+              </p>
+            </div>
+          </div>
+          <button type="button" class="btn" (click)="verificar()" >Verificar</button>
+      </div>
+    </h1><br />
+    
+   
+    <h1 [hidden]="!this.nuevoJuego.gano" style="text-align:center">Ganaste! </h1>
+    <h1 [hidden]="!this.perdio">Perdiste!</h1>
+
+
+
+  </div>
+</div>
