@@ -7,6 +7,7 @@ import { Juego } from '../../clases/juego';
 })
 export class AdivinaMasListadoComponent implements OnInit {
   public listadoParaCompartir: Array<any>;
+
   constructor() { this.listadoParaCompartir = new Array<any>()}
 
 
@@ -15,6 +16,6 @@ export class AdivinaMasListadoComponent implements OnInit {
    tomarJuegoTerminado(juego: Juego)
   {
     this.listadoParaCompartir.push(juego);
-   // console.info("en app",this.listadoParaCompartir);
+    console.info("en app",this.listadoParaCompartir);
   }
 }

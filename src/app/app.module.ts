@@ -6,6 +6,9 @@ import { AdivinaElNumeroComponent } from './componentes/adivina-el-numero/adivin
 import { ListadoDeResultadosComponent } from './componentes/listado-de-resultados/listado-de-resultados.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awesome';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatProgressSpinnerModule} from '@angular/material';
 //  import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 // import { AccordionModule } from 'ngx-bootstrap';
@@ -74,12 +77,19 @@ import { QueVesComponent } from './componentes/que-ves/que-ves.component'
     BrowserModule,
     FormsModule,
     RuteandoModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    BrowserAnimationsModule,
+    MatButtonModule,//Material
+    MatCheckboxModule,//Material
+    MatProgressSpinnerModule //spinner Material
 
     // NgbModule.forRoot(MiRuteo),
     // importo el ruteo
     // RouterModule.forRoot(MiRuteo)
   ],
+
+  exports: [MatButtonModule, MatCheckboxModule],
+  
   providers: [ JuegoServiceService],
   bootstrap: [AppComponent]
 })

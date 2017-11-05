@@ -20,6 +20,7 @@ import { CabeceraComponent } from '../componentes/cabecera/cabecera.component';
 import { QuienSoyComponent } from '../componentes/quien-soy/quien-soy.component';
 import { PiedraPapelTijeraComponent } from '../componentes/piedra-papel-tijera/piedra-papel-tijera.component';
 import { QueVesComponent } from '../componentes/que-ves/que-ves.component';
+import { AnagramaComponent } from '../componentes/anagrama/anagrama.component';
 
 
 // declaro donde quiero que se dirija
@@ -39,7 +40,8 @@ children:
       {path: 'AgilidadaMasListado' , component: AgilidadMasListadoComponent},
       {path: 'Agilidad' , component: AgilidadAritmeticaComponent},
       {path: 'PiedraPapelTijera' , component: PiedraPapelTijeraComponent },
-      {path: 'QueVes' , component: QueVesComponent }
+      {path: 'QueVes' , component: QueVesComponent },
+      {path: 'Anagrama' , component: AnagramaComponent}
     ]
 },
 {path: '**' , component: ErrorComponent},

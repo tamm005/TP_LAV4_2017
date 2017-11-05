@@ -1,4 +1,4 @@
-import  { Juego } from '../clases/juego'
+import  { Juego } from '../clases/juego';
 
 export class JuegoQueVes extends Juego {
     numImagen : number;
@@ -101,7 +101,8 @@ export class JuegoQueVes extends Juego {
     }
 
     public verificar() {
-        if (this.respuestaIngresada == "lala") {
+        //alert(" tu resp " +this.respuestaIngresada + " la correct " +this.respuesta);
+        if (this.respuestaIngresada == this.respuesta) {
           this.gano = true;
         }
         if (this.gano) {

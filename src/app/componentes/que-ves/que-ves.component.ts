@@ -11,6 +11,9 @@ export class QueVesComponent implements OnInit {
   nuevoJuego : JuegoQueVes;
   miImagen : any;
   respuestaIngresada : string;
+  ganoperdio : boolean = false;
+  msjAcerto : string;
+
   constructor() {
     this.nuevoJuego = new JuegoQueVes();//ya puedo mostrar el nombre
     this.mostrarJuego = false;
@@ -27,7 +30,17 @@ export class QueVesComponent implements OnInit {
   }
 
   verificar(){
-    this.nuevoJuego.verificar();
+    if(this.nuevoJuego.verificar()){      
+      this.ganoperdio = true;
+      this.msjAcerto = "Acertaste!";
+      console.log(this.msjAcerto);
+    }
+    else{      
+      this.ganoperdio = false;
+      this.msjAcerto = "Perdiste!";  
+      console.log(this.msjAcerto);    
+    }
+    
   }
 
   asignarImagen(){
