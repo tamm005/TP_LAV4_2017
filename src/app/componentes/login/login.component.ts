@@ -36,8 +36,10 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/Principal']);
     }
   }
-  MoverBarraDeProgreso() {
-    
+
+
+
+  MoverBarraDeProgreso() {  
     this.logeando=false;
     this.clase="progress-bar progress-bar-danger progress-bar-striped active";
     this.progresoMensaje="NSA spy..."; 
@@ -55,19 +57,18 @@ export class LoginComponent implements OnInit {
           this.clase="progress-bar progress-bar-Info progress-bar-striped active";
           this.progresoMensaje="Adjustando encriptación.."; 
           break;
-          case 60:
+        case 60:
           this.clase="progress-bar progress-bar-success progress-bar-striped active";
           this.progresoMensaje="Recompilando Info del dispositivo..";
           break;
-          case 75:
+        case 75:
           this.clase="progress-bar progress-bar-success progress-bar-striped active";
           this.progresoMensaje="Recompilando claves facebook, gmail, chats..";
           break;
-          case 85:
+        case 85:
           this.clase="progress-bar progress-bar-success progress-bar-striped active";
           this.progresoMensaje="Instalando KeyLogger..";
           break;
-          
         case 100:
           console.log("final");
           this.subscription.unsubscribe();

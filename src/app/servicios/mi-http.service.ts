@@ -10,13 +10,14 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class MiHttpService {
   
+  route : string = 'http://localhost/TP/src/assets/archivos/usuarios.json';
   constructor(public http:Http) { }
   
   public httpGetPromise(url: string, objeto:any){
 
 
     return this.http
-    .get(url)
+    .get(this.route + url)
     .toPromise()
     .then(this.extraerDatos)
     .catch(this.handleError);
