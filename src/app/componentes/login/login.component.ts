@@ -45,18 +45,20 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/Juegos']);
       }
       else{
-        alert("Primero debe registrarse");
+        
         var x = document.getElementById("usuario");
         
        this.router.navigate(['/Login']);
       }
     }
     else
-    alert("Primero debe registrarse");
+    var x = document.getElementById("usuario");
+    alert("Primero debe registrarse" + x);
     this.progreso=0;
     this.ProgresoDeAncho="0%";
     this.usuario = '';
     this.clave= '';
+    this.router.navigate(['/Registro']);
   }
 
 

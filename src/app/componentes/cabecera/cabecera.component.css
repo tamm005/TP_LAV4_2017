@@ -6,8 +6,11 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    width: 1250px;
-    left: 14px;
+
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 
@@ -42,12 +45,13 @@ a{
 }
 
 .button-right {
-    padding: 24px 12px;
+    /*
     margin-bottom: 0;
     font-size: 14px;
     font-weight: normal;
     line-height: 1.42857143;
-    text-align: right;
+    text-align: right; */
+    padding: 20px 12px;
     float: right;
  
 

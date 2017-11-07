@@ -8,7 +8,7 @@ import { LoginComponent } from './componentes/login/login.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awesome';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
-import {MatProgressSpinnerModule} from '@angular/material';
+import {MatProgressSpinnerModule, MatToolbarModule} from '@angular/material';
 
 //  import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
@@ -83,7 +83,7 @@ import { QueVesComponent } from './componentes/que-ves/que-ves.component'
     MatButtonModule,//Material
     MatCheckboxModule,//Material
     MatProgressSpinnerModule, //spinner Material
-
+    MatToolbarModule //toolbar Material
     // NgbModule.forRoot(MiRuteo),
     // importo el ruteo
     // RouterModule.forRoot(MiRuteo)

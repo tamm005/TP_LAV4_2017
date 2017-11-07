@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-quien-soy',
@@ -7,8 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuienSoyComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private route: ActivatedRoute, private router: Router) { }
+  IrAMiJuego(){
+    let user= JSON.parse(localStorage.getItem("usuario"));
+    if(user != null){
+      this.router.navigate(['/Juegos/QueVes']);
+    }else{
+      this.router.navigate(['/Login']);
+    }
+  }
   ngOnInit() {
   }
 
