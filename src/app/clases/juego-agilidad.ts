@@ -8,9 +8,10 @@ export class JuegoAgilidad extends Juego {
     resultado: number;
     numeroIngresado: number;
 
-    constructor() {
-        super("Agilidad mental");
+    constructor(nombre?: string, gano?: boolean, jugador?:string) {
+        super("Agilidad mental",gano,jugador);        
     }
+
 
     public generarOperacion() {
         this.primer = this.numeroAleatorio(1, 10);
@@ -33,7 +34,10 @@ export class JuegoAgilidad extends Juego {
     }
     
     public verificar() {
-        this.gano = this.numeroIngresado == this.resultado;
-        return this.numeroIngresado == this.resultado;
+        if(this.numeroIngresado == this.resultado)
+        this.gano = true
+        else
+        this.gano = false;
+        return this.gano;
     }
 }

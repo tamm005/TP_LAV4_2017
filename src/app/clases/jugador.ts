@@ -1,10 +1,11 @@
 export class Jugador {
-    mail : string;
+    
+    email : string;
     clave : string;
 
-    constructor(mail : string, clave: string)
+    constructor(mail? : string, clave?: string)
     {
-        this.mail = mail;
+        this.email = mail;
         this.clave = clave;
     }
 }

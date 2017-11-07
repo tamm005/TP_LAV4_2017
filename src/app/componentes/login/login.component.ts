@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import {Subscription} from "rxjs";
 import {TimerObservable} from "rxjs/observable/TimerObservable";
@@ -18,23 +19,44 @@ export class LoginComponent implements OnInit {
   logeando=true;
   ProgresoDeAncho:string;
 
+ 
+  arrayUsuarios : Array<any> = new Array<any>();
+
   clase="progress-bar progress-bar-info progress-bar-striped ";
 
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router) {
+  constructor(private route: ActivatedRoute, private router: Router) {
       this.progreso=0;
       this.ProgresoDeAncho="0%";
 
+      this.arrayUsuarios = JSON.parse(localStorage.getItem("Usuarios"));
+      console.log(this.arrayUsuarios);
   }
 
   ngOnInit() {
   }
 
   Entrar() {
-    if (this.usuario === 'admin' && this.clave === 'admin') {
-      this.router.navigate(['/Principal']);
+    let user= JSON.parse(localStorage.getItem("usuario"));
+    console.log(user);
+    if(user != null){
+      if (this.usuario === user.email && this.clave === user.pass) {
+        console.log("entro");
+        
+        this.router.navigate(['/Juegos']);
+      }
+      else{
+        alert("Primero debe registrarse");
+        var x = document.getElementById("usuario");
+        
+       this.router.navigate(['/Login']);
+      }
     }
+    else
+    alert("Primero debe registrarse");
+    this.progreso=0;
+    this.ProgresoDeAncho="0%";
+    this.usuario = '';
+    this.clave= '';
   }
 
 
@@ -45,7 +67,7 @@ export class LoginComponent implements OnInit {
     this.progresoMensaje="NSA spy..."; 
     let timer = TimerObservable.create(200, 50);
     this.subscription = timer.subscribe(t => {
-      console.log("inicio");
+     // console.log("inicio");
       this.progreso=this.progreso+1;
       this.ProgresoDeAncho=this.progreso+20+"%";
       switch (this.progreso) {
@@ -61,10 +83,10 @@ export class LoginComponent implements OnInit {
           this.clase="progress-bar progress-bar-success progress-bar-striped active";
           this.progresoMensaje="Recompilando Info del dispositivo..";
           break;
-        case 75:
-          this.clase="progress-bar progress-bar-success progress-bar-striped active";
-          this.progresoMensaje="Recompilando claves facebook, gmail, chats..";
-          break;
+        // case 75:
+        //   this.clase="progress-bar progress-bar-success progress-bar-striped active";
+        //   this.progresoMensaje="Recompilando claves facebook, gmail, chats..";
+        //   break;
         case 85:
           this.clase="progress-bar progress-bar-success progress-bar-striped active";
           this.progresoMensaje="Instalando KeyLogger..";

@@ -7,13 +7,14 @@ import { JuegoAdivina } from '../../clases/juego-adivina';
   templateUrl: './adivina-el-numero.component.html',
   styleUrls: ['./adivina-el-numero.component.css']
 })
-export class AdivinaElNumeroComponent implements OnInit {
+export class AdivinaElNumeroComponent implements OnInit { 
  @Output() enviarJuego: EventEmitter<any>= new EventEmitter<any>();
 
   nuevoJuego: JuegoAdivina;
   Mensajes:string;
   contador:number;
   ocultarVerificar:boolean;
+  aux : boolean;
  
   constructor() { 
     this.nuevoJuego = new JuegoAdivina();
@@ -30,13 +31,13 @@ export class AdivinaElNumeroComponent implements OnInit {
     this.ocultarVerificar=true;
     console.info("numero Secreto:",this.nuevoJuego.gano);  
     if (this.nuevoJuego.verificar()){
-      
-      this.enviarJuego.emit(this.nuevoJuego);
+      this.aux = true;
+      // this.enviarJuego.emit(this.nuevoJuego);
       this.MostarMensaje("Sos un Genio!!!",true);
       this.nuevoJuego.numeroSecreto=0;
 
     }else{
-
+      this.aux = false;
       let mensaje:string;
       switch (this.contador) {
         case 1:
@@ -63,12 +64,18 @@ export class AdivinaElNumeroComponent implements OnInit {
           break;
       }
       this.MostarMensaje("#"+this.contador+" "+mensaje+" ayuda :"+this.nuevoJuego.retornarAyuda());
-     
+      
 
     }
-    console.info("numero Secreto:",this.nuevoJuego.gano);  
+    
+    this.enviarJuego.emit(this.nuevoJuego);
+    console.info("numero Secreto:",this.nuevoJuego.numeroSecreto);  
+    this.Limpiar();
   }  
 
+  Limpiar(){
+    this.nuevoJuego = new JuegoAdivina();
+  }
   MostarMensaje(mensaje:string="este es el mensaje",ganador:boolean=false) {
     this.Mensajes=mensaje;    
     var x = document.getElementById("snackbar");

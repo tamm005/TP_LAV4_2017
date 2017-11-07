@@ -12,6 +12,7 @@ export class ListadoDeResultadosComponent implements OnInit {
 
 
   constructor() {
+    console.info(this.listado + "app-listado-de-resultados");
    }
 
   ngOnInit() {

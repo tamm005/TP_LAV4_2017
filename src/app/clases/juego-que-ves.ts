@@ -8,8 +8,8 @@ export class JuegoQueVes extends Juego {
     respCorrecta : string;
     respuesta : string;
     
-    constructor(){
-        super("¿Qué ves?");//le paso el nombre del juego
+    constructor(nombre?: string, gano?: boolean,jugador?:string){
+        super(" ¿Qué ves? ",gano,jugador);
     }
 
     public comenzar(){

@@ -9,6 +9,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awes
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {MatProgressSpinnerModule} from '@angular/material';
+
 //  import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 // import { AccordionModule } from 'ngx-bootstrap';
@@ -81,7 +82,7 @@ import { QueVesComponent } from './componentes/que-ves/que-ves.component'
     BrowserAnimationsModule,
     MatButtonModule,//Material
     MatCheckboxModule,//Material
-    MatProgressSpinnerModule //spinner Material
+    MatProgressSpinnerModule, //spinner Material
 
     // NgbModule.forRoot(MiRuteo),
     // importo el ruteo
