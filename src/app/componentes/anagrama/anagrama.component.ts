@@ -14,6 +14,7 @@ export class AnagramaComponent implements OnInit {
   ocultarVerificar:boolean;
   mensaje : string;
 
+
   constructor() {
     this.nuevoJuego = new JuegoAnagrama(); 
     this.ocultarVerificar=true;
@@ -42,7 +43,7 @@ export class AnagramaComponent implements OnInit {
 
   MostarMensaje(mensaje:string,gano:boolean=false) {
     this.Mensajes = mensaje;    
-    var x = document.getElementById("msj");
+    var x = document.getElementById("snackbar");
     if(gano)
       {
         x.className = "show Ganador";

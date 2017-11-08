@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
     }
     else
     var x = document.getElementById("usuario");
-    alert("Primero debe registrarse" + x);
+    alert("Primero debe registrarse");
     this.progreso=0;
     this.ProgresoDeAncho="0%";
     this.usuario = '';

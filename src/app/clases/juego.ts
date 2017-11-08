@@ -7,11 +7,16 @@ export abstract class Juego {
   constructor(nombre?: string, gano?: boolean,jugador?:string) {
     if (nombre)
       this.nombre = nombre;
-
+    if(this.user == null){
+      this.jugador = "Invitado@admin.com";
+    }
+    else{
+      this.jugador=this.user.email;
+    }
     if (gano)
       this.gano = gano;
     // if(jugador)
-      this.jugador=this.user.email;
+     // this.jugador=this.user.email;
     // else
     //   this.jugador= "natalia natalia";
   }

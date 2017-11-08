@@ -8,9 +8,9 @@ import {FormControl, Validators} from '@angular/forms';
   styleUrls: ['./registro.component.css']
 })
 export class RegistroComponent implements OnInit {
-  email:string;
-  pass:string;
-  pass2:string;
+  email:string = "admin@admin.com";
+  pass:string = "admin";
+  pass2:string = "admin";
 
   constructor(private route: ActivatedRoute, private router: Router) {
 
@@ -29,7 +29,7 @@ export class RegistroComponent implements OnInit {
       }else{
         alert("Las contraseñas no coinciden");
       }
-    }else{
+    }else{      
       alert("Complete todos los campos");
     }
   }

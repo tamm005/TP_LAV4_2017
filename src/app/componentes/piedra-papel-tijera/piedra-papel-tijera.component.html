@@ -42,7 +42,7 @@
     <div class="col-sm-1 sidenav">
     </div>
     <div class="col-sm-10 text-left"> 
-      <button *ngIf="mostrarBoton" type="button" class="btn" (click)="limpiar()" >Abandonar</button>
+      <button *ngIf="mostrarBoton" type="button" class="btn btn-info" (click)="limpiar()" >Abandonar</button>
       <div class="content">
         <div class="well color-fondo">
           <h1 style="text-align:center">
@@ -57,14 +57,14 @@
             <div class="col-md-4">
               <img alt='Icono Piedra' src='../../../assets/imagenes/rock-icon.png'><br /><br /><br />
               <p>
-                <button type="button" class="btn" (click)="elijePiedra()">Piedra</button>
+                <button type="button" mat-raised-button color="primary" (click)="elijePiedra()">Piedra</button>
               </p>
             </div>
           
             <div class="col-md-4">
               <img alt='Icono Papel' src='../../../assets/imagenes/paper-icon.png'><br /><br /><br />
               <p>
-                <button type="button" class="btn" (click)="elijePapel()">Papel</button>
+                <button type="button" mat-raised-button color="primary" (click)="elijePapel()">Papel</button>
               </p>
             </div>
       
@@ -72,7 +72,7 @@
             <div class="col-md-4">
               <img alt='Icono Tijera' src='../../../assets/imagenes/scissor-icon.png'><br /><br /><br />
               <p>
-                <button type="button" class="btn" (click)="elijeTijera()">Tijera</button>
+                <button type="button" mat-raised-button color="primary" (click)="elijeTijera()">Tijera</button>
               </p>
             </div> 
       

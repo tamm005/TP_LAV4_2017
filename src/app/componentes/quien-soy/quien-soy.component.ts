@@ -10,12 +10,12 @@ export class QuienSoyComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private router: Router) { }
   IrAMiJuego(){
-    let user= JSON.parse(localStorage.getItem("usuario"));
-    if(user != null){
+    // let user= JSON.parse(localStorage.getItem("usuario"));
+    // if(user != null){
       this.router.navigate(['/Juegos/QueVes']);
-    }else{
-      this.router.navigate(['/Login']);
-    }
+    // }else{
+    //   this.router.navigate(['/Login']);
+    // }
   }
   ngOnInit() {
   }

@@ -12,19 +12,27 @@
         </h1>
        </div>
       <h2></h2>
-      <form name="juego">
+      <form name="juego" >
+        <div class="row">
+          <div class="col-sm-3"></div>
+          <div class="col-sm-6">
+                    
+         <label><h3>Ingrese número: </h3> </label><br />
+         <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%" autofocus/>
+         <h1>{{nuevoJuego.numeroIngresado}}  </h1>
       
-         <label>ingrese numero:  </label>  <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%"/>
-          <h1>{{nuevoJuego.numeroIngresado}}  </h1>
-       
-          <h2 [hidden]="ocultarVerificar"><button  *ngIf="nuevoJuego.numeroSecreto!=0" (click)="verificar()" class="btn btn-success btn-lg">Verificar</button></h2>
-       
-          <h2><button *ngIf="nuevoJuego.numeroSecreto==0 " (click)="generarnumero()"  class="btn btn-info btn-lg">Nuevo número secreto</button></h2>
-       
-          <h2><p *ngIf="nuevoJuego.numeroSecreto!=0" ><i class="fa fa-spinner fa-spin"></i>Esperando que ingrese un número</p></h2>
+         <h2 [hidden]="ocultarVerificar"><button  *ngIf="nuevoJuego.numeroSecreto!=0" (click)="verificar()" class="btn btn-success btn-lg">Verificar</button></h2>
       
-          <h3 [hidden]="!aux">usted adivino el número</h3>
-          <h3 [hidden]="aux">usted aún no gano </h3>
+         <h2><button *ngIf="nuevoJuego.numeroSecreto==0 " (click)="generarnumero()"  class="btn btn-info btn-lg">Nuevo número secreto</button></h2>
+  
+         <h2><p *ngIf="nuevoJuego.numeroSecreto!=0" ><mat-spinner>.</mat-spinner><br />Esperando que ingrese un número</p></h2>
+     
+         <h3 [hidden]="!aux">Adivinaste el número <i class="glyphicon glyphicon-star-empty"></i></h3>
+         <h3 [hidden]="aux">Aún no ganaste </h3>
+          </div>
+          <div class="col-sm-2"></div>
+        </div> 
+
       
       
       </form>
@@ -33,18 +41,3 @@
     </div>
   </div>
 </div>
-<!--
-  <div class="container-fluid text-center">    
-  <div class="row content">
-    <div class="col-sm-2 sidenav">
-    </div>
-    <div class="col-sm-8 text-left"> 
-      <h3>contenido</h3>
-    <div class="col-sm-2 sidenav">
-    </div>
-  </div>
-</div>
- -->
-<!-- <footer class="container-fluid text-center">
-  <p>Footer Text</p>
-</footer> -->
