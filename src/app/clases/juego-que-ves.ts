@@ -42,7 +42,7 @@ export class JuegoQueVes extends Juego {
             break;
             case 7 :
             this.nombreImagen = '7';
-            this.respCorrecta = "desconicidos";
+            this.respCorrecta = "desconocidos";
             break;
             case 8 :
             this.nombreImagen = '8';

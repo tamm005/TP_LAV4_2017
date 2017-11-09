@@ -21,7 +21,7 @@ button {
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 50%;
+    width: 60%;
 }
 
 button:hover {
@@ -122,3 +122,7 @@ span.psw {
     align-items: center;
     justify-content: space-around;
   }
+
+.fuente{
+    font-family: 'Permanent Marker', cursive;
+}

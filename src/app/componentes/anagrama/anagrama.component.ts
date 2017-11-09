@@ -13,6 +13,7 @@ export class AnagramaComponent implements OnInit {
   contador:number;
   ocultarVerificar:boolean;
   mensaje : string;
+  ocultarComenzar : boolean = true;
 
 
   constructor() {
@@ -26,6 +27,7 @@ export class AnagramaComponent implements OnInit {
     this.ocultarVerificar = false;
     this.nuevoJuego.gano = false;
     this.Mensajes = "";
+    this.ocultarComenzar = false;
   }
 
   verificar()
@@ -37,8 +39,11 @@ export class AnagramaComponent implements OnInit {
     }else{
       this.mensaje = "Ooops, casi lo lograste!";
       this.MostarMensaje(this.mensaje); 
+      this.nuevoJuego.palabraIngresada ="";
+      this.nuevoJuego.palabraDesordenada = "";
     }
     console.info("Gano: ",this.nuevoJuego.gano);  
+    this.ocultarComenzar = true;
   }  
 
   MostarMensaje(mensaje:string,gano:boolean=false) {
@@ -54,7 +59,7 @@ export class AnagramaComponent implements OnInit {
     var modelo = this;
     setTimeout(function(){ 
       x.className = x.className.replace("show", "");
-      modelo.ocultarVerificar=false;
+      //modelo.ocultarVerificar=false;
      }, 3000);
     console.info("objeto",x);
   

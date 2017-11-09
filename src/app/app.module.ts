@@ -9,6 +9,11 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome/angular-font-awes
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {MatProgressSpinnerModule, MatToolbarModule} from '@angular/material';
+import { HttpModule } from '@angular/http';
+import { Ng2SmartTableModule } from 'ng2-smart-table';
+
+import { JugadoresService } from './servicios/jugadores.service';
+import { ArchivosjugadoresService } from './servicios/archivosjugadores.service';
 
 //  import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
@@ -83,15 +88,17 @@ import { QueVesComponent } from './componentes/que-ves/que-ves.component'
     MatButtonModule,//Material
     MatCheckboxModule,//Material
     MatProgressSpinnerModule, //spinner Material
-    MatToolbarModule //toolbar Material
+    MatToolbarModule, //toolbar Material
     // NgbModule.forRoot(MiRuteo),
     // importo el ruteo
     // RouterModule.forRoot(MiRuteo)
+    HttpModule,
+    Ng2SmartTableModule
   ],
 
   exports: [MatButtonModule, MatCheckboxModule],
   
-  providers: [ JuegoServiceService],
+  providers: [ JuegoServiceService,JugadoresService,ArchivosjugadoresService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
