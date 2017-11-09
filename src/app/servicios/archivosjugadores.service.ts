@@ -12,9 +12,7 @@ export class ArchivosjugadoresService {
   
     public httpGetPromise(url: string){
       return this.http
-      .get("./../../assets/archivos/usuarios.json")
-      //.get("../../../assets/archivos/usuarios.json")
-     // .get("../usuarios.json")
+      .get("../../assets/archivos/usuarios.json")
       .toPromise()
       .then(this.extraerDatos)
       .catch(this.handleError);
@@ -29,5 +27,13 @@ export class ArchivosjugadoresService {
         return error;
     }
 
+    
+
+    getUsers() {        
+        return this.http.get("../../assets/archivos/usuarios.json")        
+        .map(response => response.json());        
+    }
+        
+    
     
 }
