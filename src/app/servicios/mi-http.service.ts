@@ -10,7 +10,7 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class MiHttpService {
   
-  route : string = 'http://localhost/TP/src/assets/archivos/usuarios.json';
+  route : string = '/TP_LAV4_2017/assets/archivos/usuarios.json';
   constructor(public http:Http) { }
   
   public httpGetPromise(url: string, objeto:any){
